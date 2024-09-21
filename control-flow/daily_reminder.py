@@ -34,16 +34,19 @@ def main():
         time_bound = input("Is it time-bound? (yes/no): ").lower()
 
         # Initialize the reminder message
-        reminder_message = f"'{task}' is a {priority} priority task."
+        if time_bound == "yes":
+            immediate_attention = "requires immediate attention today!"
+        else:
+            immediate_attention = "Consider completing it when you have free time."
 
         # Process the task based on priority using match-case statement
         match priority:
             case "high":
-                reminder_message += " This task requires immediate attention today!" if time_bound == "yes" else " You should try to get this done soon."
+                reminder_message = f"Reminder: '{task}' is a high priority task that {immediate_attention}"
             case "medium":
-                reminder_message += " This task is important and requires your attention today!" if time_bound == "yes" else " It would be good to get this done when you can."
+                reminder_message = f"Reminder: '{task}' is a medium priority task that {immediate_attention}"
             case "low":
-                reminder_message += " While this is a low priority, it still needs your attention today!" if time_bound == "yes" else " Consider completing it when you have free time."
+                reminder_message = f"Reminder: '{task}' is a low priority task that {immediate_attention}"
             case _:
                 reminder_message = "Invalid priority level entered."
 
