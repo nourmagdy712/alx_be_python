@@ -38,7 +38,7 @@ def main():
     # Process the task based on priority using match-case statement
     match priority:
         case "high":
-            reminder_message += " that requires immediate attention today!"
+            reminder_message += " This task requires immediate attention today!"
         case "medium":
             reminder_message += " It would be good to get this done soon."
         case "low":
@@ -48,7 +48,7 @@ def main():
 
     # Modify the reminder if the task is time-bound
     if time_bound == "yes" and priority in ["high", "medium"]:
-        reminder_message = f"'{task}' is a {priority} priority task that requires immediate attention today!"
+        reminder_message = f"that requires immediate attention today!"
     
     # Print the customized reminder
     print(reminder_message)
