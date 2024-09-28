@@ -12,8 +12,8 @@ Prompt the user to enter a temperature and specify whether it’s in Celsius or 
 Based on the user’s input, call the appropriate conversion function and display the converted temperature.
 If the user entered a wrong input,raise an error “Invalid temperature. Please enter a numeric value.”"""
 
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
 
 def convert_to_celsius(fahrenheit):
     return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
@@ -23,7 +23,7 @@ def convert_to_fahrenheit(celsius):
 
 def main():
     try:
-        temperature = (input("Enter the temperature to convert: "))
+        temperature = float(input("Enter the temperature to convert: "))
         unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
 
         if unit == 'F':
